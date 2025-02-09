@@ -179,7 +179,7 @@ python protein_prediction.py reference_proteome.fasta 9606.genome.fasta 1 20
 ```
 
 ## ITOL annotation
-Scripts for automatically generating ITOL annotation files.
+Scripts for automatically generating ITOL annotation files. Take the annotation files and drag and drop them on to your ITOL tree.
 
 ### ITOL_binary.py
 Generate a presence absence distribution based on one or more fasta files.
@@ -205,7 +205,7 @@ python ITOL_heatmap.py '*fasta'
 ```
 
 ## FigTree annotation
-Scripts for annotating and working with trees using FigTree (http://tree.bio.ed.ac.uk/software/figtree/)
+Scripts for annotating and working with trees using FigTree (http://tree.bio.ed.ac.uk/software/figtree/). Add annotation files using File > Import Annotations (cntrl+I).
 
 ### remove_and_extract.py
 
