@@ -8,7 +8,9 @@ Note: to get the most out of these scripts, it is worth formatting the headers o
 ## Installation
 Install dependencies:
 ```
-conda install --file requirements.txt
+conda install --yes --file requirements.txt
+# or
+mamba install --yes --file requirements.txt
 ```
 
 ## Database assembly
