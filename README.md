@@ -166,16 +166,16 @@ python monophyly_constraint.py [treefile_with_monophyletic otus coloured] [colou
 python monophyly_constraint.py treefile.coloured 0000ff
 ```
 
-### exonerate_protein_prediction.py
+### protein_prediction.py
 
-Predict proteins from a genome using a given protein or proteome for reference (e.g. proteome of a closely related species, transcriptome, or a set of genes). The gene models are usually rough but may provide a useful starting place. Useful for estimating genome completeness or identifying missing genes for phylogenomic analyses. 
+Predict proteins from a genome using a given protein or proteome for reference (e.g. proteome of a closely related species, transcriptome, or a set of genes). Useful for estimating genome completeness or identifying missing genes for phylogenomic analyses. Protein predictions done using Miniprot (https://github.com/lh3/miniprot?tab=readme-ov-file) and clustered at 100% identity using cd-hit.
 
-In brief, proteins are mapped to the genome using tBLASTn (e < 1e-5), mapped regions are extracted, query proteins are used as a model for Exonerate to identify exons, exons are combined into coding regions, and coding regions are translated. The resulting protein predictions are compared against the original proteome and protein models with a hit back to the original dataset are retained and clustered at 99% using Cd-hit to reduce redundancy.
+Note: the genome file should start with a taxonomy id.
 
 ```
-python exonerate_protein_prediction.py [proteome.fasta] [genome.fasta] [threads] [genetic code (integer)]
+python protein_prediction.py [proteome.fasta] [genome.fasta] genetic code (integer)] [threads]
 # eg.
-python exonerate_protein_prediction.py reference_proteome.fasta genome_scaffolds.fasta 20 6
+python protein_prediction.py reference_proteome.fasta 9606.genome.fasta 1 20
 ```
 
 ## ITOL annotation
