@@ -16,7 +16,7 @@ conda install --file requirements.txt
 ### download_reference_proteomes.py
 Download a taxonomically balanced set of proteomes from UniProt Reference Proteomes (https://www.uniprot.org/proteomes). From a Uniprot proteome list, the script will download the best proteome per rank1, up to a max of n proteomes per family rank 2, but will include mandatory taxa, can exclude certain taxa, and will assess quality using busco (or protein number) given minimum thresholds.
 The input is a uniprot table in the format Entry,Organism,Organism ID, protein count, BUSCO, CPD, Genome Assembly ID.
-![alt text](https://github.com/nickatirwin/phylogenomic_scripts/misc/uniprot_image.jpg?raw=true)
+![alt text](https://github.com/nickatirwin/phylogenomic_scripts/misc/uniprot_image.png?raw=true)
 Note that for cetain taxa (like viruses) protein count may be a better quality metric than busco.
 
 ```
