@@ -1,3 +1,4 @@
+bioconda::miniprot
 bioconda::exonerate
 bioconda::blast
 bioconda::diamond
