@@ -1,0 +1,10 @@
+bioconda::exonerate
+bioconda::blast
+bioconda::diamond
+conda-forge::parallel
+bioconda::cd-hit
+conda-forge::ncbi-datasets-cli
+conda-forge::ete3
+conda-forge::biopython
+anaconda::pandas
+anaconda::numpy
