@@ -8,7 +8,9 @@ Note: to get the most out of these scripts, it is worth formatting the headers o
 ## Installation
 Install dependencies:
 ```
-conda install --file requirements.txt
+conda install --yes --file requirements.txt
+# or
+mamba install --yes --file requirements.txt
 ```
 
 ## Database assembly
@@ -181,12 +183,14 @@ Scripts for automatically generating ITOL annotation files.
 
 ### ITOL_binary.py
 Generate a presence absence distribution based on one or more fasta files.
+![alt text](misc/binary.png)
 ```
 python ITOL_binary.py '*fasta'
 ```
 
 ### ITOL_domain_annotation.py
 Plot domain structures across a phylogeny. Domain annotations are based on parsed HMMScan annotations (see parse_HMMscan_alignments.py).
+![alt text](misc/domains.png)
 ```
 python ITOL_domain_annotation.py [fasta file] [parsed hmmscan output]
 # eg.
@@ -194,6 +198,7 @@ python ITOL_domain_annotation.py proteinA.fasta ProteinA.fasta.hmmscan.parsed
 ```
 
 ### ITOL_heatmap.py
+![alt text](misc/heatmap.png)
 Generate a presence absence heatmap across a phylogeny using one or more fasta files.
 ```
 python ITOL_heatmap.py '*fasta'
