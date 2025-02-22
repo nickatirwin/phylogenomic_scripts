@@ -36,6 +36,6 @@ subprocess.call('cd-hit -i '+genome.split('.')[0]+'.'+proteins.split('.')[0]+'.m
 
 # remove temp files
 subprocess.call('mv '+genome.split('.')[0]+'.'+proteins.split('.')[0]+'.miniprot.fasta.100c '+genome.split('.')[0]+'.'+proteins.split('.')[0]+'.miniprot.fasta',shell=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
-subprocess.call('rm '+genome.split('.')[0]+'.'+proteins.split('.')[0]+'.miniprot.fasta.100c.clstr')
+subprocess.call('rm '+genome.split('.')[0]+'.'+proteins.split('.')[0]+'.miniprot.fasta.100c.clstr',shell=True)
 
 
