@@ -23,7 +23,7 @@ subprocess.call('miniprot -Iut16 -t ' + threads + ' --trans ' + genome + ' ' + p
 # parse output
 mini = open(genome.split('/')[-1].split('.')[0]+'.'+proteins.split('.')[0]+'.miniprot','r').readlines()
 
-if len(mini) > 0:
+if len(mini) > 1:
     out = open(genome.split('/')[-1].split('.')[0]+'.'+proteins.split('.')[0]+'.miniprot.fasta','w')
     n = 0
     p = 1
