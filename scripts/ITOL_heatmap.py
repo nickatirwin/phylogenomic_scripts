@@ -16,8 +16,18 @@ sep = ' '
 subprocess.call('wget https://itol.embl.de/help/dataset_heatmap_template.txt',shell = True)
 subprocess.call('mv dataset_heatmap_template.txt ITOL_heatmap_annotation.txt', shell = True)
 
-# 2. change the optional values to fit the dataset
-genes = [fname.split('.')[0] for fname in glob(sys.argv[1])]
+# 2. Make a gene list - ordered by size
+size_d = {}
+for fname in glob(sys.argv[1]):
+    fasta = open(fname,'r').read().split('>')[1:]
+    size_d[fname] = len(fasta)
+# sort dictionary
+size_d = {k: v for k, v in sorted(size_d.items(), key=lambda item: item[1])}
+files = []
+genes = []
+for f in size_d:
+    files.append(f)
+    genes.append(f.split('.')[0])
 
 # colour gradient selection
 min = '#deebf7'
@@ -34,7 +44,7 @@ subprocess.call("sed -i 's/FIELD_LABELS f1 f2 f3 f4 f5 f6/FIELD_LABELS " + sep.j
 # collect data for each gene
 # record all taxa
 t = []
-for fname in glob(sys.argv[1]):
+for fname in files:
     f = open(fname,'r').read().split('>')[1:]
     for line in f:
         t.append(line.split('.')[0].strip())
@@ -46,7 +56,7 @@ for taxa in t:
 
 # record data
 n = 0
-for fname in glob(sys.argv[1]):
+for fname in files:
     f = open(fname,'r').read().split('>')[1:]
     counts = Counter([t.split('.')[0].strip() for t in f])
     for t in taxa_d:
